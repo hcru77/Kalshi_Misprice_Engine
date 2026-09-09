@@ -132,9 +132,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tests\test_arbitragedetect.cpp" />
+    <ClCompile Include="tests\test_orderbook.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="arbitragedetector.h" />
     <ClInclude Include="orderbook.h" />
+    <ClInclude Include="ringbuffer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
