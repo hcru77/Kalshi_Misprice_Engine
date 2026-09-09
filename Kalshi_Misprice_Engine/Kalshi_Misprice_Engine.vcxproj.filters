@@ -27,6 +27,12 @@
     <ClCompile Include="tests\test_arbitragedetect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tests\test_ringbuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\test_kalshiparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="orderbook.h">
@@ -38,5 +44,11 @@
     <ClInclude Include="ringbuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="kalshiparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
   </ItemGroup>
 </Project>

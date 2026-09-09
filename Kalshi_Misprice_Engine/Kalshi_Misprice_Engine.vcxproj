@@ -133,12 +133,18 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tests\test_arbitragedetect.cpp" />
+    <ClCompile Include="tests\test_kalshiparser.cpp" />
     <ClCompile Include="tests\test_orderbook.cpp" />
+    <ClCompile Include="tests\test_ringbuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arbitragedetector.h" />
+    <ClInclude Include="kalshiparser.h" />
     <ClInclude Include="orderbook.h" />
     <ClInclude Include="ringbuffer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
