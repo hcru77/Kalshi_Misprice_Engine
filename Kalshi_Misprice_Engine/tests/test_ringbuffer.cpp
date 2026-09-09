@@ -79,7 +79,7 @@ void benchmark_spsc_throughput() {
         uint64_t received = 0;
         while (received < TOTAL_MESSAGES) {
             if (rb->pop(tick)) {
-                assert(tick.sequence_id == received);
+                assert(tick.sequence_id == received);   // check for race conditions (if none, lock-free atomics worked
                 ++received;
             }
             else {
