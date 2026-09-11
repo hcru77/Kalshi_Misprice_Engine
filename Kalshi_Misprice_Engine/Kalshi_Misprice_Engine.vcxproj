@@ -132,10 +132,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="tests\test_arbitragedetect.cpp" />
-    <ClCompile Include="tests\test_kalshiparser.cpp" />
-    <ClCompile Include="tests\test_orderbook.cpp" />
-    <ClCompile Include="tests\test_ringbuffer.cpp" />
+    <ClCompile Include="market_data_quickstart.cpp" />
+    <ClCompile Include="simdjson.cpp" />
+    <ClCompile Include="tests\test_arbitragedetect.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tests\test_kalshiparser.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tests\test_orderbook.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tests\test_ringbuffer.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arbitragedetector.h" />

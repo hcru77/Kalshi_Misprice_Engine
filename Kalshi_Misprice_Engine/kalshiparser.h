@@ -36,7 +36,7 @@ public:
 			update.side = (side_str == "yes") ? Side::YES : Side::NO;
 
 			update.price_cents = static_cast<uint8_t>(uint64_t(doc["price"]));
-			update.delta_quantity = static_cast<uint64_t>(doc["delta"]);
+			update.delta_quantity = static_cast<int64_t>(doc["delta"]);
 
 			return update;
 		}
