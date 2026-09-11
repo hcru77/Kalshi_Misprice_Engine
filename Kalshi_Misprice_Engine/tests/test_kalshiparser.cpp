@@ -16,7 +16,7 @@ void test_correctness() {
     assert(result.has_value());
     assert(result->side == Side::YES);
     assert(result->price_cents == 45);
-    assert(result->quantity == 200);
+    assert(result->delta_quantity == 200);
 
     std::cout << "[PASS] Kalshi JSON parsed successfully into C++ struct.\n";
 }

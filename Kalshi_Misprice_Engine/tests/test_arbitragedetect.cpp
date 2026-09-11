@@ -13,9 +13,9 @@ void test_arbitrage_detector() {
     assert(!signal1.has_value());
     std::cout << "[PASS] Scenario 1: Normal market correctly rejected." << std::endl;
 
-    // Case 2: Gross arb that fails fee check
+    // Case 2: Positive gross margin that is consumed by fees
     book.reset();
-    book.set_level(Side::YES, 43, 100);
+    book.set_level(Side::YES, 45, 100);
     book.set_level(Side::NO, 56, 100);
 
     auto signal2 = ArbitrageDetector::evaluate(book);

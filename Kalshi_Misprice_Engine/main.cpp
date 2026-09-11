@@ -29,7 +29,7 @@ int main() {
 	std::vector<simdjson::padded_string> live_feed;
 	live_feed.emplace_back(std::string(R"({"type":"orderbook_delta","market_ticker":"INFLATION-26","price":45,"delta":200,"side":"yes"})"));
 	live_feed.emplace_back(std::string(R"({"type":"orderbook_delta","market_ticker":"INFLATION-26","price":50,"delta":100,"side":"no"})"));
-	// This last tick creates a crossed book (Yes 45 + No 56 = 101), triggering an arbitrage opportunity
+	// This last tick creates a crossed book (ask YES = 50, ask NO = 44, 50 + 44 = 94 < 100), triggering an arbitrage opportunity
 	live_feed.emplace_back(std::string(R"({"type":"orderbook_delta","market_ticker":"INFLATION-26","price":56,"delta":300,"side":"yes"})"));
 
 	constexpr size_t TOTAL_MESSAGES = 10'000'000;
@@ -45,7 +45,7 @@ int main() {
 
 		while (processed < TOTAL_MESSAGES) {
 			if (rb->pop(update)) {
-				ob.set_level(update.side, update.price_cents, update.quantity);
+				ob.apply_delta(update.side, update.price_cents, update.delta_quantity);
 
 				auto opt_arb = ArbitrageDetector::evaluate(ob);
 
