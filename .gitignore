@@ -10,6 +10,12 @@
 *.userosscache
 *.sln.docstates
 *.env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -22,6 +28,7 @@ mono_crash.*
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+build/
 
 [Dd]ebug/x64/
 [Dd]ebugPublic/x64/
