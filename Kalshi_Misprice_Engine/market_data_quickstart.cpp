@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <string>
 
-constexpr const char* API_BASE = "https://external-api.kalshi.com/trade-api/v2";
+constexpr const char* API_BASE = "https://external-api.demo.kalshi.co/trade-api/v2";
 
 size_t write_callback(
     char* data,
